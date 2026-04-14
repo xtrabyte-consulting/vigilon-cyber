@@ -1,0 +1,159 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Pricing — Cybersecurity Compliance Testing | Vigilon Cyber';
+const description = 'Transparent pricing for EN 18031 compliance testing, Cyber Resilience Act readiness, ETSI IoT security, penetration testing, risk assessments and vulnerability scanning from Vigilon Cyber.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>/</span><strong>Pricing</strong>
+      </div>
+      <h1>Pricing</h1>
+      <p>Clear, transparent pricing with no hidden costs. Every engagement is scoped to your specific product and compliance needs.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Compliance Testing Packages</h2>
+        <p>Choose a package that fits your compliance pathway, or contact us for a fully bespoke quote.</p>
+      </div>
+      <div class="grid grid-3">
+        <!-- Essentials -->
+        <div class="card pricing-card">
+          <h3>Essentials</h3>
+          <p style="color:var(--color-text-light);">Gap analysis &amp; guidance</p>
+          <div class="pricing-price">From £3,500<span> / engagement</span></div>
+          <ul class="pricing-features">
+            <li>EN 18031-1 or ETSI 303 645 gap analysis</li>
+            <li>Detailed gap report with remediation priorities</li>
+            <li>2-hour findings walkthrough</li>
+            <li>Executive summary</li>
+            <li>30-day email support</li>
+          </ul>
+          <a href="/request-quote" class="btn btn-outline" style="width:100%;justify-content:center;">Get a Quote</a>
+        </div>
+
+        <!-- Professional -->
+        <div class="card pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <h3>Professional</h3>
+          <p style="color:var(--color-text-light);">Full compliance testing</p>
+          <div class="pricing-price">From £7,500<span> / engagement</span></div>
+          <ul class="pricing-features">
+            <li>Full EN 18031-1 or ETSI compliance testing</li>
+            <li>Technical file documentation support</li>
+            <li>Risk assessment &amp; threat model</li>
+            <li>Vulnerability scanning</li>
+            <li>Remediation guidance &amp; retest</li>
+            <li>60-day support</li>
+          </ul>
+          <a href="/request-quote" class="btn btn-primary" style="width:100%;justify-content:center;">Get a Quote</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="card pricing-card">
+          <h3>Enterprise</h3>
+          <p style="color:var(--color-text-light);">Full compliance + NB prep</p>
+          <div class="pricing-price">Custom<span> / scoped</span></div>
+          <ul class="pricing-features">
+            <li>Everything in Professional</li>
+            <li>Notified Body assessment preparation</li>
+            <li>Cyber Resilience Act readiness</li>
+            <li>Penetration testing (all targets)</li>
+            <li>SBOM &amp; vulnerability handling setup</li>
+            <li>Ongoing retainer &amp; advisory</li>
+          </ul>
+          <a href="/request-quote" class="btn btn-outline" style="width:100%;justify-content:center;">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Individual Services -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Individual Services</h2>
+        <p>Need a specific service rather than a full package? Here are our standalone offerings.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Penetration Testing</h3>
+          <p style="color:var(--color-text-light);margin-bottom:1rem;">Web, API, IoT, mobile, or cloud infrastructure testing.</p>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--color-primary);">From £2,500</div>
+          <p style="font-size:0.9rem;color:var(--color-text-light);">Scoped based on target complexity and size.</p>
+        </div>
+        <div class="card">
+          <h3>Risk Assessment &amp; Threat Modelling</h3>
+          <p style="color:var(--color-text-light);margin-bottom:1rem;">STRIDE-based threat modelling with risk register.</p>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--color-primary);">From £2,000</div>
+          <p style="font-size:0.9rem;color:var(--color-text-light);">Based on product complexity and number of interfaces.</p>
+        </div>
+        <div class="card">
+          <h3>Vulnerability Scanning</h3>
+          <p style="color:var(--color-text-light);margin-bottom:1rem;">Continuous external and internal scanning.</p>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--color-primary);">From £500<span style="font-size:0.9rem;font-weight:400;"> / month</span></div>
+          <p style="font-size:0.9rem;color:var(--color-text-light);">Annual contracts available with monthly reporting.</p>
+        </div>
+        <div class="card">
+          <h3>CRA Readiness Assessment</h3>
+          <p style="color:var(--color-text-light);margin-bottom:1rem;">Gap analysis against Cyber Resilience Act requirements.</p>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--color-primary);">From £4,000</div>
+          <p style="font-size:0.9rem;color:var(--color-text-light);">Includes vulnerability handling and SBOM review.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container" style="max-width:720px;">
+      <div class="section-header">
+        <h2>Pricing FAQ</h2>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What affects the price of an engagement?</button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Key factors include the number and complexity of products being assessed, the target standard(s), the number of interfaces and attack surfaces, and whether you need Notified Body preparation. We always provide a detailed quote before starting work.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you offer retesting after remediation?</button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes. Professional and Enterprise packages include a free retest of all remediated findings within the support period. Essentials clients can add retesting for an additional fee.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I combine services?</button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Absolutely. Most clients combine compliance testing with penetration testing and risk assessment. We offer bundled pricing for combined engagements — <a href="/request-quote">request a quote</a> with your requirements and we'll propose the best approach.</p>
+        </div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Do you offer ongoing retainer arrangements?</button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Yes. Our Enterprise tier includes an ongoing advisory retainer, and we offer standalone retainer arrangements for clients who need continuous access to cybersecurity compliance expertise.</p>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container text-center">
+      <h2>Need a Custom Quote?</h2>
+      <p style="color:var(--color-accent-light);max-width:520px;margin:1rem auto 2rem;">Every product is different. Tell us about yours and we'll provide a detailed, no-obligation quote within 24 hours.</p>
+      <a href="/request-quote" class="btn btn-white btn-lg">Request a Quote</a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

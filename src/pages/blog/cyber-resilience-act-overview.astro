@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Cyber Resilience Act: What Manufacturers Need to Know | Vigilon Cyber';
+const description = 'An overview of the EU Cyber Resilience Act — its scope, key requirements, product classification, timelines, and what it means for manufacturers of products with digital elements.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><strong>Cyber Resilience Act Overview</strong>
+      </div>
+      <div class="blog-meta" style="color:var(--color-accent-light);">February 2026 · 10 min read</div>
+      <h1>Cyber Resilience Act: What Manufacturers Need to Know</h1>
+      <p>The EU's landmark horizontal cybersecurity regulation for products with digital elements — scope, requirements, timelines, and practical preparation guidance.</p>
+    </div>
+  </section>
+
+  <article class="section">
+    <div class="container prose">
+      <h2>What Is the Cyber Resilience Act?</h2>
+      <p>The <strong>Cyber Resilience Act (CRA)</strong> — officially Regulation (EU) 2024/2847 — is the European Union's first horizontal cybersecurity regulation for products with digital elements. It establishes mandatory cybersecurity requirements for hardware and software products throughout their entire lifecycle, from design through end-of-life.</p>
+      <p>Unlike directive-level legislation, the CRA is a regulation, meaning it applies directly in all EU member states without the need for national transposition.</p>
+
+      <h2>Who Does It Apply To?</h2>
+      <p>The CRA applies to <strong>manufacturers, importers, and distributors</strong> of products with digital elements that are placed on the EU market. "Products with digital elements" is broadly defined and covers:</p>
+      <ul>
+        <li>Hardware products with embedded software (IoT devices, network equipment, industrial controllers)</li>
+        <li>Standalone software products (applications, operating systems, libraries)</li>
+        <li>Remote data processing solutions essential to the product's functionality</li>
+      </ul>
+      <p>Exclusions include medical devices (covered by MDR), motor vehicles (covered by type-approval), aviation equipment, and products for national security purposes.</p>
+
+      <h2>Product Classification</h2>
+      <p>The CRA categorises products into three classes, each with different conformity assessment requirements:</p>
+
+      <h3>Default Category</h3>
+      <p>The majority of products fall into this category. Manufacturers can self-assess conformity (Module A) using harmonised standards. Examples: smart TVs, smart speakers, basic IoT sensors.</p>
+
+      <h3>Important Products — Class I</h3>
+      <p>Products with higher cybersecurity risk. Conformity can be demonstrated via harmonised standards (self-assessment) or third-party assessment. Examples: password managers, VPN products, network management systems, firewalls.</p>
+
+      <h3>Important Products — Class II</h3>
+      <p>Products with the highest cybersecurity risk in the "important" category. Third-party conformity assessment is required. Examples: operating systems, hypervisors, firewalls for industrial use, intrusion detection systems, secure elements.</p>
+
+      <h3>Critical Products</h3>
+      <p>A separate category defined in Annex IV for products critical to the cybersecurity of other products. European cybersecurity certification may be required. Examples: hardware security modules (HSMs), smart meter gateways.</p>
+
+      <h2>Key Requirements for Manufacturers</h2>
+
+      <h3>Essential Cybersecurity Requirements (Annex I)</h3>
+      <p>Products must be designed and developed with appropriate cybersecurity measures. The CRA specifies requirements including:</p>
+      <ul>
+        <li>Secure by default configuration</li>
+        <li>Protection of data confidentiality, integrity, and availability</li>
+        <li>Minimisation of attack surfaces</li>
+        <li>Appropriate access control mechanisms</li>
+        <li>Protection against unauthorised access</li>
+        <li>Secure software update mechanisms</li>
+      </ul>
+
+      <h3>Vulnerability Handling (Article 13)</h3>
+      <p>Manufacturers must:</p>
+      <ul>
+        <li>Identify and document vulnerabilities, including in third-party components</li>
+        <li>Provide security updates for at least 5 years (or the expected product lifetime)</li>
+        <li>Establish a coordinated vulnerability disclosure policy</li>
+        <li>Report actively exploited vulnerabilities to ENISA within 24 hours</li>
+        <li>Notify users of security incidents and available patches</li>
+      </ul>
+
+      <h3>Software Bill of Materials</h3>
+      <p>Manufacturers must generate and maintain a machine-readable SBOM documenting at minimum the top-level dependencies of their product. The SBOM must be available to market surveillance authorities upon request.</p>
+
+      <h3>Conformity Assessment</h3>
+      <p>The required assessment route depends on the product classification. Self-assessment is available for default-category products and (when using harmonised standards) Class I products. Third-party assessment is mandatory for Class II and critical products.</p>
+
+      <h2>Timeline</h2>
+      <p>The CRA entered into force on 10 December 2024. Key application dates:</p>
+      <ul>
+        <li><strong>11 June 2026:</strong> Provisions on conformity assessment bodies apply — Notified Bodies must be designated</li>
+        <li><strong>11 September 2026:</strong> Vulnerability reporting obligations apply — manufacturers must report actively exploited vulnerabilities to ENISA</li>
+        <li><strong>11 December 2027:</strong> All provisions apply in full — products must meet all essential requirements</li>
+      </ul>
+
+      <h2>Relationship with Other Regulations</h2>
+      <p>The CRA complements existing legislation:</p>
+      <ul>
+        <li><strong>Radio Equipment Directive (RED):</strong> Products subject to RED cybersecurity requirements (Article 3.3) must also comply with the CRA. <a href="/blog/red-compliance-2026">Learn more about RED compliance</a>.</li>
+        <li><strong>NIS2 Directive:</strong> The CRA covers product security; NIS2 covers organisational and network security for essential and important entities.</li>
+        <li><strong>EU Cybersecurity Act:</strong> The CRA builds on the certification framework established by the EU Cybersecurity Act.</li>
+      </ul>
+
+      <h2>How to Prepare Now</h2>
+      <ol>
+        <li><strong>Classify your products</strong> — determine which CRA category each product falls into</li>
+        <li><strong>Conduct a gap analysis</strong> — assess your current products and processes against Annex I requirements</li>
+        <li><strong>Establish vulnerability handling</strong> — set up coordinated disclosure, ENISA reporting workflows, and patch management. The reporting obligations apply from September 2026</li>
+        <li><strong>Implement SBOM management</strong> — start generating and maintaining SBOMs for all products</li>
+        <li><strong>Design for compliance</strong> — ensure new products are designed with CRA requirements from the start</li>
+        <li><strong>Engage early with Notified Bodies</strong> — if your products require third-party assessment, capacity may be limited initially</li>
+      </ol>
+
+      <p>Our <a href="/services/cyber-resilience-act">CRA readiness services</a> cover all of these steps. We also recommend aligning your CRA preparation with <a href="/services/en-18031-compliance">EN 18031 compliance</a> activities where products are subject to both regulations.</p>
+
+      <div class="text-center mt-2">
+        <a href="/request-quote" class="btn btn-primary btn-lg">Start Your CRA Preparation</a>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Cybersecurity Compliance Blog | Vigilon Cyber';
+const description = 'Expert articles on EN 18031, Radio Equipment Directive, Cyber Resilience Act, ETSI IoT security, penetration testing and cybersecurity compliance strategy from Vigilon Cyber.';
+
+const posts = [
+  {
+    title: 'The Complete Guide to EN 18031-1 Compliance',
+    href: '/blog/en-18031-complete-guide',
+    date: 'April 2026',
+    readTime: '12 min read',
+    excerpt: 'Everything manufacturers need to know about meeting EN 18031-1 requirements for CE marking under the Radio Equipment Directive — from scope and structure to testing and documentation.',
+    tag: 'EN 18031',
+  },
+  {
+    title: 'Radio Equipment Directive: Cybersecurity Requirements Explained',
+    href: '/blog/red-compliance-2026',
+    date: 'March 2026',
+    readTime: '8 min read',
+    excerpt: 'A practical breakdown of the RED cybersecurity obligations under Articles 3.3(d), (e) and (f), and how manufacturers can demonstrate conformity in 2026.',
+    tag: 'RED',
+  },
+  {
+    title: 'Cyber Resilience Act: What Manufacturers Need to Know',
+    href: '/blog/cyber-resilience-act-overview',
+    date: 'February 2026',
+    readTime: '10 min read',
+    excerpt: 'An overview of the EU Cyber Resilience Act — its scope, key requirements, product classification, timelines, and what it means for your product development lifecycle.',
+    tag: 'CRA',
+  },
+  {
+    title: 'ETSI EN 303 645: A Practical Guide for IoT Manufacturers',
+    href: '/blog/etsi-iot-practical-guide',
+    date: 'January 2026',
+    readTime: '9 min read',
+    excerpt: 'A practical walkthrough of all 13 provisions of ETSI EN 303 645 with implementation guidance and common pitfalls to avoid.',
+    tag: 'ETSI IoT',
+  },
+  {
+    title: 'Self-Declaration vs. Notified Body: Choosing Your Compliance Path',
+    href: '/blog/self-declaration-vs-notified-body',
+    date: 'December 2025',
+    readTime: '7 min read',
+    excerpt: 'Understand the differences between self-declaration (Module A) and Notified Body assessment (Module B+C) and how to choose the right path for your product.',
+    tag: 'Compliance',
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>/</span><strong>Blog</strong>
+      </div>
+      <h1>Blog</h1>
+      <p>Expert insights on cybersecurity regulation, compliance strategy, and technical guidance for manufacturers of connected products.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-3">
+        {posts.map(post => (
+          <a href={post.href} class="blog-card">
+            <div class="card">
+              <div class="blog-meta">{post.date} · {post.readTime}</div>
+              <h2 style="font-size:1.25rem;margin-bottom:0.75rem;">{post.title}</h2>
+              <p>{post.excerpt}</p>
+              <span class="blog-tag">{post.tag}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container text-center">
+      <h2>Stay Informed</h2>
+      <p style="color:var(--color-text-light);max-width:520px;margin:1rem auto 2rem;">Need help with a specific compliance challenge? Our team is ready to assist.</p>
+      <a href="/request-quote" class="btn btn-primary btn-lg">Talk to an Expert</a>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
