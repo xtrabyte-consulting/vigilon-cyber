@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title: string;
   description: string;
@@ -84,10 +86,6 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
       "Vulnerability Scanning"
     ]
   })} />
-
-  <style>
-    @import '../styles/global.css';
-  </style>
 </head>
 <body>
   <slot name="header" />
