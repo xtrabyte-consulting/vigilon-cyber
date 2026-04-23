@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^powershell -ExecutionPolicy Bypass -Command \"npm run dev\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "git commit": true
+    }
+}
