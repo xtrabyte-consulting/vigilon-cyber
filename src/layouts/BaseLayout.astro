@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import SpeedInsights from '@vercel/speed-insights/astro';
 
 export interface Props {
   title: string;
@@ -87,9 +86,14 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
       "Vulnerability Scanning"
     ]
   })} />
+  
+  <!-- Vercel Speed Insights -->
+  <script>
+    import { injectSpeedInsights } from '@vercel/speed-insights';
+    injectSpeedInsights();
+  </script>
 </head>
 <body>
-  <SpeedInsights />
   <slot name="header" />
   <main>
     <slot />
