@@ -24,8 +24,95 @@ const pathname = Astro.url.pathname;
     <nav>
       <ul class="nav-links">
         <li><a href="/" class={pathname === '/' ? 'active' : ''}>Home</a></li>
-        <li><a href="/services" class={pathname.startsWith('/services') ? 'active' : ''}>Services</a></li>
-        <li><a href="/packages" class={pathname === '/packages' ? 'active' : ''}>Packages</a></li>
+        
+        <!-- Services Dropdown -->
+        <li class="nav-dropdown">
+          <a href="/services" class={pathname.startsWith('/services') ? 'active' : ''}>
+            Services
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:4px;vertical-align:middle;">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/services/red-cyber-compliance">
+              <img src="/icons/certificate.svg" alt="" class="dropdown-icon" />
+              <div>
+                <strong>RED Cyber CE Mark Testing</strong>
+                <span>EN 18031 compliance for CE marking</span>
+              </div>
+            </a>
+            <a href="/services/cyber-resilience-act">
+              <img src="/icons/shield.svg" alt="" class="dropdown-icon" />
+              <div>
+                <strong>Cyber Resilience Act Prep</strong>
+                <span>EU CRA readiness assessment</span>
+              </div>
+            </a>
+            <a href="/services/etsi-iot-security">
+              <img src="/icons/network.svg" alt="" class="dropdown-icon" />
+              <div>
+                <strong>ETSI IoT Security</strong>
+                <span>EN 303 645 baseline security</span>
+              </div>
+            </a>
+            <a href="/services/penetration-testing">
+              <img src="/icons/target.svg" alt="" class="dropdown-icon" />
+              <div>
+                <strong>Penetration Testing</strong>
+                <span>Exploit vulnerabilities before attackers</span>
+              </div>
+            </a>
+            <a href="/services/risk-assessment">
+              <img src="/icons/chart.svg" alt="" class="dropdown-icon" />
+              <div>
+                <strong>Risk Assessment</strong>
+                <span>STRIDE threat modeling</span>
+              </div>
+            </a>
+            <a href="/services/vulnerability-scanning">
+              <img src="/icons/search.svg" alt="" class="dropdown-icon" />
+              <div>
+                <strong>Vulnerability Scanning</strong>
+                <span>Continuous security monitoring</span>
+              </div>
+            </a>
+            <a href="/services" class="dropdown-view-all">
+              View All Services →
+            </a>
+          </div>
+        </li>
+
+        <!-- Packages Dropdown -->
+        <li class="nav-dropdown">
+          <a href="/packages" class={pathname === '/packages' ? 'active' : ''}>
+            Packages
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="margin-left:4px;vertical-align:middle;">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="dropdown-menu dropdown-menu-packages">
+            <a href="/packages#essentials">
+              <div>
+                <strong>Essentials</strong>
+                <span>Gap analysis & guidance</span>
+              </div>
+            </a>
+            <a href="/packages#professional">
+              <div>
+                <strong>Professional</strong>
+                <span class="badge-popular">Most Popular</span>
+                <span>Full compliance assessment</span>
+              </div>
+            </a>
+            <a href="/packages#enterprise">
+              <div>
+                <strong>Enterprise</strong>
+                <span>Complete security package</span>
+              </div>
+            </a>
+          </div>
+        </li>
+
         <li><a href="/blog" class={pathname.startsWith('/blog') ? 'active' : ''}>Blog</a></li>
         <li><a href="/faq" class={pathname === '/faq' ? 'active' : ''}>FAQ</a></li>
         <li><a href="/request-quote" class="nav-cta">Get a Quote</a></li>
@@ -33,3 +120,23 @@ const pathname = Astro.url.pathname;
     </nav>
   </div>
 </header>
+
+<style>
+  .dropdown-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+  
+  .badge-popular {
+    display: inline-block;
+    background: var(--color-cta);
+    color: var(--color-white);
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+    margin-left: 6px;
+  }
+</style>
