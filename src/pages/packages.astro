@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const title = 'Pricing — Cybersecurity Compliance Testing | Vigilon Cyber';
-const description = 'Transparent pricing for EN 18031 compliance testing, Cyber Resilience Act readiness, ETSI IoT security, penetration testing, risk assessments and vulnerability scanning from Vigilon Cyber.';
+const title = 'Packages — Cybersecurity Compliance Testing | Vigilon Cyber';
+const description = 'Transparent scope for EN 18031 compliance testing, Cyber Resilience Act readiness, ETSI IoT security, penetration testing, risk assessments and vulnerability scanning from Vigilon Cyber.';
 ---
 
 <BaseLayout title={title} description={description}>
@@ -13,10 +13,10 @@ const description = 'Transparent pricing for EN 18031 compliance testing, Cyber 
   <section class="page-header">
     <div class="container">
       <div class="breadcrumb">
-        <a href="/">Home</a><span>/</span><strong>Pricing</strong>
+        <a href="/">Home</a><span>/</span><strong>Packages</strong>
       </div>
-      <h1>Pricing</h1>
-      <p>Clear, transparent pricing with no hidden costs. Every engagement is scoped to your specific product and compliance needs.</p>
+      <h1>Packages</h1>
+      <p>Clear, transparent quotes with no hidden costs. Every engagement is scoped to your specific product and compliance needs.</p>
     </div>
   </section>
 
@@ -24,19 +24,19 @@ const description = 'Transparent pricing for EN 18031 compliance testing, Cyber 
     <div class="container">
       <div class="section-header">
         <h2>CE Compliance Testing Packages</h2>
-        <p>Choose a package that fits your RED Article 3.3 d/e/f compliance pathway, or contact us for a fully bespoke quote. Starting costs reflect a basic connected product with one user and one network interface. Prices may vary based on product type, complexity and additional requirements.</p>
+        <p>Choose a package that fits your compliance pathway, or contact us for a fully bespoke quote.</p>
       </div>
       <div class="grid grid-3">
         <!-- Essentials -->
         <div class="card pricing-card">
           <h3>Essentials</h3>
           <p style="color:var(--color-text-light);">Gap analysis &amp; guidance</p>
-          <p style="color:var(--color-text-light);margin-bottom:1rem;">Ideal for early-stage products or those seeking a high-level overview of compliance gaps.</p>
-          <div class="pricing-price">From $3,500<span> / engagement</span></div>
+          <p style="color:var(--color-text-light);margin-bottom:1rem;">Ideal for early-stage or very simple products or those seeking a high-level overview of compliance gaps.</p>
+          <!--  <div class="pricing-price">From $3,500<span> / engagement</span></div>-->
           <ul class="pricing-features">
             <li>EN 18031 or ETSI 303 645 gap analysis</li>
             <li>Detailed gap report with remediation priorities</li>
-            <li>Findings walkthrough</li>
+            <li>Findings walkthrough and Q&A session</li>
             <li>Executive summary</li>
             <li>90-day email support & remediation guidance</li>
             <li style="color:var(--color-text-light);">Retesting available for an additional fee</li>
@@ -49,18 +49,17 @@ const description = 'Transparent pricing for EN 18031 compliance testing, Cyber 
           <div class="pricing-badge">Most Popular</div>
           <h3>Professional</h3>
           <p style="color:var(--color-text-light);">Full cybersecurity assessment</p>
-          <p style="color:var(--color-text-light);margin-bottom:1rem;">Comprehensive testing and support for products ready for full compliance assessment and CE marking.</p>
-          <div class="pricing-price">From $7,500<span> / engagement</span></div>
+          <p style="color:var(--color-text-light);margin-bottom:1rem;">Comprehensive testing and support suitable for most products to achieve presumption of conformity.</p>
+          <!-- <div class="pricing-price">From $7,500<span> / engagement</span></div> -->
           <ul class="pricing-features">
             <li>Full EN 18031 compliance testing</li>
-            <li>Technical file documentation support</li>
             <li>Detailed test report with procedures and results</li>
             <li>Compliance evidence bundle</li>
-            <li>Executive summary with key findings and recommendations</li>
-            <li>Vulnerability scanning</li>
+            <li>Executive summary with any non-compliances and recommended remediations</li>
+            <li>SBOM &amp; existing vulnerability scan</li>
             <li>Unlimited remediation guidance &amp; support</li>
-            <li>Free remediation verification </li>
-            <li>Full retests for an additional fee</li>
+            <li>Rapid remediation verification and document updates priced per engagement</li>
+            <li>Full retests for an additional fee lower than initial quote</li>
           </ul>
           <a href="/request-quote" class="btn btn-primary" style="width:100%;justify-content:center;">Get a Quote</a>
         </div>
@@ -68,21 +67,17 @@ const description = 'Transparent pricing for EN 18031 compliance testing, Cyber 
         <!-- Enterprise -->
         <div class="card pricing-card">
           <h3>Enterprise</h3>
-          <p style="color:var(--color-text-light);">Full compliance, NB prep &amp; CRA readiness</p>
-          <p style="color:var(--color-text-light);margin-bottom:1rem;">End-to-end compliance support for complex products, Notified Body assessment preparation, and Cyber Resilience Act readiness.</p>
-          <div class="pricing-price">From $20,000<span> / engagement</span></div>
+          <p style="color:var(--color-text-light);">Full compliance package</p>
+          <p style="color:var(--color-text-light);margin-bottom:1rem;">Best choice for complex products with many attack surfaces, that handle the transfer of money or personal data, or that may need Notified Body engagement.</p>
+          <!--  <div class="pricing-price">From $20,000<span> / engagement</span></div> -->
           <ul class="pricing-features">
             <li>Everything in Professional</li>
-            <li>Notified Body assessment preparation</li>
             <li>Risk assessment &amp; threat modelling</li>
-            <li>Cyber Resilience Act readiness</li>
             <li>Penetration testing (all targets)</li>
-            <li>SBOM &amp; vulnerability handling setup</li>
-            <li>Software development lifecycle review</li>
-            <li>Exploit response procedure &amp; policy review and assistance</li>
-            <li>Ongoing retainer &amp; advisory</li>
-            <li>Priority support &amp; remediation assistance</li>
+            <li>Exploit &amp; vulnerability response planning</li>
+            <li>Ongoing retainer for support &amp; remediation assistance</li>
             <li>Unlimited retesting of remediated findings within support period</li>
+            <li>Optional Notified Body assessment preparation</li>
           </ul>
           <a href="/request-quote" class="btn btn-outline" style="width:100%;justify-content:center;">Get a Quote</a>
         </div>
