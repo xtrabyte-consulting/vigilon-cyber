@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'ETSI EN 304 223: Baseline Cybersecurity for AI Models and Systems | Vigilon Cyber';
+const description = 'A detailed look at ETSI EN 304 223, the first globally applicable European Standard for AI cybersecurity — its scope, requirements, stakeholder obligations, and how organisations can prepare.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><strong>ETSI EN 304 223: AI Cybersecurity Standard</strong>
+      </div>
+      <div class="blog-meta" style="color:var(--color-accent-light);">May 2026 · 11 min read</div>
+      <h1>ETSI EN 304 223: Baseline Cybersecurity Requirements for AI Models and Systems</h1>
+      <p>The first European Standard to address AI-specific cyber threats across the full lifecycle — what it covers, who it applies to, and how to achieve conformity.</p>
+    </div>
+  </section>
+
+  <article class="section">
+    <div class="container prose">
+      <h2>A Landmark Standard for AI Security</h2>
+      <p>On 15 January 2026, ETSI published <strong>EN 304 223</strong> — <em>Baseline Cyber Security Requirements for AI Models and Systems</em>. It is the first European Standard (EN) specifically designed to address cybersecurity threats that are unique to artificial intelligence, covering the complete AI system lifecycle from development through deployment and end-of-support.</p>
+      <p>Unlike sector-specific AI guidance published previously, EN 304 223 is a horizontal standard: it applies across all industries and product categories where AI models or AI-enabled systems are developed, integrated, or operated. Its designation as a European Standard (EN) — rather than a Technical Report or Technical Specification — signals regulatory intent and means it can be referenced in legislation and used to establish a presumption of conformity.</p>
+      <p>The standard has been drafted with global applicability in mind. ETSI worked closely with international bodies to align terminology and requirements with ISO/IEC and ITU frameworks, positioning EN 304 223 as the reference document for AI cybersecurity worldwide.</p>
+
+      <h2>Why a Dedicated AI Cybersecurity Standard?</h2>
+      <p>Existing cybersecurity standards — including ETSI EN 303 645 for IoT and EN 18031 for radio equipment — were designed for conventional software and hardware. AI systems introduce a distinct set of threats that these standards do not adequately address:</p>
+      <ul>
+        <li><strong>Adversarial attacks:</strong> Carefully crafted inputs designed to cause an AI model to produce incorrect or malicious outputs (adversarial examples).</li>
+        <li><strong>Model poisoning:</strong> Manipulation of training data or the training process to embed backdoors or bias into the model.</li>
+        <li><strong>Model extraction:</strong> Reconstructing a proprietary model's behaviour or weights through repeated inference queries.</li>
+        <li><strong>Inference attacks:</strong> Extracting sensitive information about training data from the model's outputs.</li>
+        <li><strong>Supply chain risks:</strong> Pre-trained models, datasets, and third-party components introducing vulnerabilities before integration.</li>
+        <li><strong>Emergent behaviour:</strong> AI systems behaving in unexpected or insecure ways that were not present during testing.</li>
+      </ul>
+      <p>EN 304 223 establishes minimum security requirements to address this threat landscape across the entire AI supply chain, from organisations that train foundation models to those that fine-tune, deploy, or integrate AI into larger systems.</p>
+
+      <h2>Scope and Applicability</h2>
+      <p>EN 304 223 applies to any organisation involved in the <strong>development, integration, deployment, or operation</strong> of AI models and AI-enabled systems. Specifically, the standard addresses:</p>
+      <ul>
+        <li><strong>AI models:</strong> Machine learning models, large language models (LLMs), foundation models, and other AI components made available as standalone products or embedded within a wider system.</li>
+        <li><strong>AI systems:</strong> Products or services in which AI is a functional component — including AI-enabled IoT devices, autonomous systems, AI-driven analytics platforms, and AI-integrated software applications.</li>
+        <li><strong>AI supply chain participants:</strong> Model developers, dataset providers, fine-tuning services, system integrators, cloud AI service providers, and operators of deployed AI systems.</li>
+      </ul>
+      <p>The standard is technology-neutral and applies regardless of the deployment environment (on-device, on-premise, or cloud-hosted). It explicitly excludes AI systems used solely for internal research and development prior to any market placement or operational deployment.</p>
+
+      <h2>Structure of EN 304 223</h2>
+      <p>The standard is organised into six main clauses that map to the AI lifecycle:</p>
+
+      <h3>Clause 5 — AI Asset Identification and Risk Assessment</h3>
+      <p>Before implementing controls, organisations must identify and document all AI assets within scope, including models, training datasets, inference pipelines, APIs, and operational environments. A structured AI-specific risk assessment must be conducted, addressing both conventional cybersecurity threats and the AI-specific threat categories above. The risk assessment methodology must be documented and reviewed when the AI system is materially updated.</p>
+
+      <h3>Clause 6 — Secure Development and Supply Chain</h3>
+      <p>Requirements in this clause address the security of the AI development pipeline:</p>
+      <ul>
+        <li>Training data must be sourced, validated, and stored securely. Provenance must be documented.</li>
+        <li>Third-party pre-trained models and datasets must be assessed for supply chain risk before integration.</li>
+        <li>Model training environments must be protected against unauthorised access and tampering.</li>
+        <li>Organisations must maintain an AI Bill of Materials (AI-BOM) documenting models, datasets, frameworks, and external components.</li>
+        <li>Fine-tuning and transfer learning processes must be treated as security-sensitive operations with appropriate access controls.</li>
+      </ul>
+
+      <h3>Clause 7 — Robustness and Resilience</h3>
+      <p>AI systems must be designed and tested to maintain secure and predictable behaviour under adversarial conditions:</p>
+      <ul>
+        <li>Systems must be evaluated for susceptibility to adversarial input attacks using established testing methodologies.</li>
+        <li>Input validation and anomaly detection mechanisms must be implemented at inference boundaries.</li>
+        <li>AI systems performing safety-critical or security-relevant functions must implement fallback or fail-safe mechanisms.</li>
+        <li>Operators must define acceptable operational boundaries and implement monitoring to detect out-of-distribution inputs at runtime.</li>
+      </ul>
+
+      <h3>Clause 8 — Data and Model Protection</h3>
+      <p>This clause addresses the confidentiality and integrity of AI models and associated data:</p>
+      <ul>
+        <li>Model weights and architectures that represent proprietary or security-sensitive intellectual property must be protected against extraction and unauthorised access.</li>
+        <li>Inference APIs must implement rate limiting and query monitoring to detect model extraction attempts.</li>
+        <li>Personal data used in training or inference must be handled in accordance with data minimisation principles; privacy-preserving techniques (such as differential privacy or federated learning) should be considered where technically feasible.</li>
+        <li>Model integrity must be verifiable — systems must be able to detect if a deployed model has been tampered with or substituted.</li>
+      </ul>
+
+      <h3>Clause 9 — Vulnerability Management and Incident Response</h3>
+      <p>EN 304 223 extends conventional vulnerability management practices to cover AI-specific weaknesses:</p>
+      <ul>
+        <li>Organisations must establish processes to identify, track, and remediate AI-specific vulnerabilities, including newly discovered attack techniques applicable to their model architectures.</li>
+        <li>A coordinated AI vulnerability disclosure policy must be published, providing a mechanism for external researchers to report issues.</li>
+        <li>Incident response plans must explicitly address AI-related incidents, including model compromise, training data poisoning events, and inference attacks.</li>
+        <li>Model update and retraining processes must be treated as security-critical operations with appropriate approval and verification steps.</li>
+      </ul>
+
+      <h3>Clause 10 — Transparency and Documentation</h3>
+      <p>Downstream integrators and operators must be given sufficient information to deploy AI components securely:</p>
+      <ul>
+        <li>Model developers must publish security-relevant documentation covering intended use, known limitations, threat model assumptions, and recommended deployment controls.</li>
+        <li>Security properties and assurance claims must not be overstated. If a model has not been evaluated against specific attack types, this must be disclosed.</li>
+        <li>The AI-BOM must be available to supply chain participants and, upon request, to market surveillance authorities.</li>
+      </ul>
+
+      <h2>Relationship with EU AI Act and Other Regulations</h2>
+      <p>EN 304 223 is designed to complement the EU AI Act, which entered into application in August 2024 for prohibited AI practices and will apply to high-risk AI systems from August 2026. The relationship between the two frameworks is as follows:</p>
+      <ul>
+        <li>The <strong>EU AI Act</strong> establishes risk classification, conformity assessment obligations, and governance requirements for AI systems, with the heaviest obligations placed on "high-risk" systems.</li>
+        <li><strong>EN 304 223</strong> provides the technical security baseline — the specific requirements that an AI system must meet to be considered secure, regardless of its AI Act risk class.</li>
+        <li>Demonstrating conformity with EN 304 223 is expected to contribute to satisfying the cybersecurity-related requirements under Article 15 of the EU AI Act (robustness, accuracy, and cybersecurity), once the standard is formally harmonised under that regulation.</li>
+      </ul>
+      <p>EN 304 223 also intersects with the <strong>Cyber Resilience Act (CRA)</strong> for AI-enabled products with digital elements. Manufacturers of such products must meet both the CRA's essential requirements and the AI-specific baseline established by EN 304 223. Where products are also subject to the <strong>Radio Equipment Directive</strong>, EN 304 223 provides relevant technical content for cybersecurity claims under Articles 3.3(d), (e), and (f).</p>
+
+      <h2>Who Needs to Act?</h2>
+      <p>The standard's supply chain scope means that obligations fall on a wide range of organisations:</p>
+
+      <h3>Foundation Model and LLM Developers</h3>
+      <p>Organisations that train large models for external use or API access must implement Clause 6 (supply chain security, training data provenance, AI-BOM) and Clause 10 (security documentation for downstream users). Model extraction protections under Clause 8 are directly applicable to public inference APIs.</p>
+
+      <h3>System Integrators and Product Manufacturers</h3>
+      <p>Organisations integrating third-party AI models into products must assess their AI supply chain (Clause 6), implement runtime robustness controls (Clause 7), and ensure the AI-BOM is maintained for the integrated system. Manufacturers placing AI-enabled products on the EU market must align this work with their CRA conformity assessment activities.</p>
+
+      <h3>Enterprise AI Operators</h3>
+      <p>Organisations deploying AI systems internally or as services must implement the risk assessment (Clause 5), establish vulnerability management and incident response processes (Clause 9), and ensure that operators of the system have adequate security documentation (Clause 10).</p>
+
+      <h3>Cloud and AI-as-a-Service Providers</h3>
+      <p>Providers offering AI capabilities as managed services carry obligations across all clauses. In particular, they must ensure that infrastructure-level controls do not create gaps in the security properties claimed for the AI models they host.</p>
+
+      <h2>Conformity Assessment</h2>
+      <p>EN 304 223 is a baseline standard, and conformity assessment routes are expected to be defined by the regulatory instruments that reference it. For the current period, organisations are advised to:</p>
+      <ul>
+        <li>Conduct a <strong>self-assessment</strong> against all clauses, producing documented evidence of conformity.</li>
+        <li>Engage an <strong>independent third party</strong> to review the self-assessment and perform technical testing, particularly for Clause 7 (adversarial robustness) and Clause 8 (model protection).</li>
+        <li>Prepare for formal <strong>third-party certification</strong> once harmonisation under the EU AI Act and CRA is confirmed — Notified Bodies are expected to begin offering EN 304 223 assessment services in late 2026.</li>
+      </ul>
+      <p>Organisations subject to the EU AI Act's high-risk provisions should treat EN 304 223 conformity as an early-stage deliverable within their broader AI Act compliance programme, given the timeline overlap.</p>
+
+      <h2>How to Prepare</h2>
+      <ol>
+        <li><strong>Map your AI assets</strong> — identify all AI models, datasets, and AI-enabled systems across your organisation and supply chain.</li>
+        <li><strong>Conduct an AI-specific risk assessment</strong> — use the Clause 5 framework to assess both conventional and AI-specific threats for each asset.</li>
+        <li><strong>Audit your AI supply chain</strong> — review the security posture of third-party models and datasets you depend on; request AI-BOMs and security documentation from suppliers.</li>
+        <li><strong>Implement robustness testing</strong> — commission adversarial testing on models used in security-relevant or safety-critical contexts.</li>
+        <li><strong>Establish an AI vulnerability disclosure policy</strong> — publish a clear process and point of contact for AI-specific security disclosures.</li>
+        <li><strong>Align with CRA and EU AI Act workstreams</strong> — avoid duplicating effort by integrating EN 304 223 compliance into existing regulatory programmes.</li>
+      </ol>
+
+      <p>Our team provides <a href="/services/risk-assessment">AI security risk assessments</a> and technical gap analyses aligned to EN 304 223. We also offer adversarial robustness testing and support for producing the AI-BOM and security documentation required under Clause 10.</p>
+
+      <div class="text-center mt-2">
+        <a href="/request-quote" class="btn btn-primary btn-lg">Get an EN 304 223 Assessment Quote</a>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</BaseLayout>
