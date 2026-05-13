@@ -6,7 +6,7 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.vigiloncyber.com',
-  output: 'hybrid',
+  output: 'server',
   adapter: vercel(),
   integrations: [sitemap()],
   trailingSlash: 'never',
