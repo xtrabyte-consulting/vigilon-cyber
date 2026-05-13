@@ -4,6 +4,7 @@
             "approve": true,
             "matchCommandLine": true
         },
-        "git commit": true
+        "git commit": true,
+        "git push": true
     }
 }
