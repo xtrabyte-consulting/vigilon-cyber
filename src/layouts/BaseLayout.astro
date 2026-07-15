@@ -54,6 +54,15 @@ const canonicalUrl = canonical || new URL(Astro.url.pathname, siteUrl).href;
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 
+  <!-- Google tag (gtag.js) - Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17513516704"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17513516704');
+  </script>
+
   <!-- Schema.org ProfessionalService -->
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
