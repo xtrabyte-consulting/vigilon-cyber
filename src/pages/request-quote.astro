@@ -170,6 +170,13 @@ const description = 'Request a no-obligation quote for EN 18031 compliance testi
               form.style.display = 'none';
               successEl.style.display = 'block';
               successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+              // Google Ads conversion — fires only on confirmed submission
+              if (typeof (window as any).gtag === 'function') {
+                (window as any).gtag('event', 'conversion', {
+                  send_to: 'AW-17513516704/jf6NCOzw-dAcEKCdjJ9B',
+                });
+              }
             } else {
               errorEl.style.display = 'block';
               submitBtn.disabled = false;
