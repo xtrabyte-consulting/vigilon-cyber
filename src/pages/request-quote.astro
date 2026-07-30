@@ -131,10 +131,14 @@ const description = 'Request a no-obligation quote for EN 18031 compliance testi
           <textarea id="additionalInfo" name="additionalInfo" placeholder="Any other details that would help us scope your engagement — e.g., number of products, existing certifications, specific regulatory concerns."></textarea>
         </div>
 
-        <!-- Honeypot field for bot prevention -->
+        <!-- Honeypot fields for bot prevention -->
         <div style="display:none;" aria-hidden="true">
           <label for="website">Website</label>
           <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+          <label for="fax">Fax Number</label>
+          <input type="text" id="fax" name="fax" tabindex="-1" autocomplete="off" />
         </div>
 
         <button type="submit" id="submit-btn" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
@@ -160,10 +164,14 @@ const description = 'Request a no-obligation quote for EN 18031 compliance testi
           submitBtn.disabled = true;
           submitBtn.textContent = 'Sending…';
 
+          const payload = new FormData(form);
+          // Honeypot tripped → bot. Server discards it; never fire the Ads conversion.
+          const isBot = Boolean(payload.get('website') || payload.get('fax'));
+
           try {
             const response = await fetch('/api/quote', {
               method: 'POST',
-              body: new FormData(form),
+              body: payload,
             });
 
             if (response.ok) {
@@ -171,8 +179,8 @@ const description = 'Request a no-obligation quote for EN 18031 compliance testi
               successEl.style.display = 'block';
               successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-              // Google Ads conversion — fires only on confirmed submission
-              if (typeof (window as any).gtag === 'function') {
+              // Google Ads conversion — fires only on confirmed human submission
+              if (!isBot && typeof (window as any).gtag === 'function') {
                 (window as any).gtag('event', 'conversion', {
                   send_to: 'AW-17513516704/jf6NCOzw-dAcEKCdjJ9B',
                 });

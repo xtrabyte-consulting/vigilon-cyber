@@ -47,8 +47,8 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  // Honeypot bot check
-  if (formData.get('website')) {
+  // Honeypot bot check — silently discard, but pretend success so bots don't adapt
+  if (formData.get('website') || formData.get('fax')) {
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
